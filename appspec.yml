@@ -5,10 +5,10 @@ files:
     destination: /home/ec2-user/jiangzx
 hooks:
   BeforeInstall:
-    - location: 
+    - location: scripts/stop-process.sh
       timeout: 300
-      runas: root
+      runas: ec2-user
   AfterInstall:
-    - location: 
+    - location: scripts/start-process.sh
       timeout: 300
-      runas: root
+      runas: ec2-user
